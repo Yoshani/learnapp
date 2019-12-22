@@ -15,9 +15,12 @@ class ArticleController
     }
 
     /**
-     * @Route("/news/why-asteroids-taste-like-bacon")
+     * @Route("/news/{any}")
      */
-    public function show(){
-          return new Response('Future page to show one article!');
+    public function show($any)
+    {
+        return new Response(sprintf(
+            'Future page to show the article "%s"', $any
+        ));
     }
 }
